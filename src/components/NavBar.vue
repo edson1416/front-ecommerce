@@ -41,30 +41,16 @@ const items = ref([
     icon: 'pi pi-bars',
     items: [
       {
-        label: 'Components',
-        icon: 'pi pi-bolt'
+        label: 'Gamer',
+        icon: 'pi pi-headphones'
       },
       {
-        label: 'Blocks',
-        icon: 'pi pi-server'
+        label: 'Musica',
+        icon: 'pi pi-volume-up'
       },
       {
-        label: 'UI Kit',
-        icon: 'pi pi-pencil'
-      },
-      {
-        label: 'Templates',
-        icon: 'pi pi-palette',
-        items: [
-          {
-            label: 'Apollo',
-            icon: 'pi pi-palette'
-          },
-          {
-            label: 'Ultima',
-            icon: 'pi pi-palette'
-          }
-        ]
+        label: 'Informatica',
+        icon: 'pi pi-tablet'
       }
     ]
   },
