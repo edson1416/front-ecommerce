@@ -4,6 +4,8 @@ import NotFound from "../components/NotFound.vue";
 import Login from "../components/login/Login.vue";
 import Favoritos from "../components/favoritos/Favoritos.vue";
 import MiCarrito from "../components/carrito/MiCarrito.vue";
+import MiCuenta from "../components/cuenta/usuario/MiCuenta.vue";
+import Productos from "../components/productos/Productos.vue";
 
 
 const routes = [
@@ -12,6 +14,8 @@ const routes = [
     {path:'/login',name: 'Login',component: Login},
     {path:'/favoritos',name: 'Favoritos',component: Favoritos},
     {path:'/mi-carrito', name: 'MiCarrito',component: MiCarrito},
+    {path:'/mi-cuenta', name: 'MiCuenta',component: MiCuenta},
+    {path:'/productos', name: 'Productos',component: Productos},
 ]
 
 const router = createRouter({

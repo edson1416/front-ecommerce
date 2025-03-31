@@ -1,13 +1,21 @@
 <template>
-  <div class="card shadow">
+  <div class="card shadow fixed top-0 left-0 z-50 w-full">
     <Menubar :model="items">
-      <template #item="{ item, hasSubmenu }">
-        <router-link :to="item.to">
-          <div class="p-3">
+      <template #item="{ item }">
+        <template v-if="item.to">
+          <router-link :to="item.to">
+            <div class="p-3">
+              <span :class="item.icon"/>
+              <span class="ml-2">{{ item.label }}</span>
+            </div>
+          </router-link>
+        </template>
+        <template v-else>
+          <div class="p-3 cursor-pointer">
             <span :class="item.icon"/>
             <span class="ml-2">{{ item.label }}</span>
           </div>
-        </router-link>
+        </template>
       </template>
       <template #end>
         <div class="flex items-center gap-2">
@@ -42,15 +50,18 @@ const items = ref([
     items: [
       {
         label: 'Gamer',
-        icon: 'pi pi-headphones'
+        icon: 'pi pi-headphones',
+        to: '/productos',
       },
       {
         label: 'Musica',
-        icon: 'pi pi-volume-up'
+        icon: 'pi pi-volume-up',
+        to: '/favoritos',
       },
       {
         label: 'Informatica',
-        icon: 'pi pi-tablet'
+        icon: 'pi pi-tablet',
+        to: '/favoritos',
       }
     ]
   },

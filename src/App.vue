@@ -6,7 +6,9 @@ import NavBar from "./components/NavBar.vue";
 <template>
   <div>
     <NavBar></NavBar>
-    <router-view></router-view>
+    <div class="pt-16"> <!-- Ajusta el padding para que no se solape con la navbar -->
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
