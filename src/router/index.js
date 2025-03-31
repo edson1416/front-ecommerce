@@ -14,7 +14,7 @@ const routes = [
     {path:'/login',name: 'Login',component: Login},
     {path:'/favoritos',name: 'Favoritos',component: Favoritos},
     {path:'/mi-carrito', name: 'MiCarrito',component: MiCarrito},
-    {path:'/mi-cuenta', name: 'MiCuenta',component: MiCuenta},
+    {path:'/mi-cuenta', name: 'MiCuenta',component: MiCuenta, meta: {title: 'Mi Cuenta', requiereAuth: true}},
     {path:'/productos', name: 'Productos',component: Productos},
 ]
 
