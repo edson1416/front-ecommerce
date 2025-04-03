@@ -13,21 +13,6 @@ onMounted(async ()=>{
   await productosStore.getAll()
 })
 
-const products = ref(
-  {
-    imagen: 'https://primefaces.org/cdn/primevue/images/usercard.png',
-    nombre_producto: 'Product prueba',
-    categoria: {
-      nombre: "Informatica"
-    },
-    precio: 45.65,
-    calificacion: 2,
-    stock: 0
-  }
-);
-const formatCurrency = (value) => {
-  return value.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
-};
 const getSeverity = (product) => {
   switch (product.stock) {
     case product.stock>6:
@@ -65,6 +50,7 @@ const getSeverity = (product) => {
                   <div class="flex flex-row md:flex-col justify-between items-start gap-2">
                     <div>
                       <div class="text-lg font-medium mt-2">{{ item.nombre_producto }}</div>
+                      <div class="font-normal mt-2">{{ item.descripcion }}</div>
                       <span class="text-surface-500 dark:text-surface-400 text-sm font-light">{{ item.categoria.nombre_categoria}}</span>
                     </div>
                     <div class="bg-surface-100 p-1" style="border-radius: 30px">
