@@ -18,5 +18,10 @@ export default {
         }catch(error){
             console.log(error)
         }
+    },
+    cerrarSesion(){
+        return api.post('/logout')
+        .then(response => response)
+        .catch(error => {return error.response})
     }
 }

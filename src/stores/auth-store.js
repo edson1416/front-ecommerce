@@ -43,10 +43,12 @@ export const userAuthStore = defineStore('auth',()=>{
         }
     }
 
-    const logout = ()=>{
+    const logout = async ()=>{
+        await authService.cerrarSesion()
         token.value =null
         usuario.value = null
-        router.push({name:'Login', replace:true})
+        localStorage.removeItem("auth")
+        await router.push({name: 'Login', replace: true})
     }
 
     return {

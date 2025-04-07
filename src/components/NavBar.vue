@@ -25,6 +25,10 @@ const selectMember = (member) => {
   op.value.hide();
 }
 
+const logout = async () => {
+  await authStore.logout();
+}
+
 const items = ref([
   {
     label: 'Inicio',
@@ -106,7 +110,7 @@ const items = ref([
                     <li v-for="member in members" :key="member.opcion" class="flex items-center gap-2 px-2 py-3 hover:bg-emphasis cursor-pointer rounded-border" @click="selectMember(member)">
                       <i :class="member.icon" style="font-size: 1rem"></i>
                       <div>
-                        <span class="font-normal">{{ member.opcion }}</span>
+                        <span class="font-normal" @click="logout">{{ member.opcion }}</span>
                       </div>
                     </li>
                   </ul>
