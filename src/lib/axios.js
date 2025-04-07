@@ -18,11 +18,13 @@ api.interceptors.request.use(config => {
 
 api.interceptors.response.use(response =>{
     return response;
-}, async (error) => {
-    if(error.response.status ===401){
-        const authStore = userAuthStore()
-        authStore.logout();
-    }
+// }, async (error) => {
+//     console.log('asdf:',error)
+//     if(error.response.status ===401){
+//         const authStore = userAuthStore()
+//         authStore.logout();
+//     }
+//
 })
 
 

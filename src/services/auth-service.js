@@ -2,11 +2,15 @@ import api from "../lib/axios.js";
 
 export default {
     iniciarSession(credenciales){
-        try{
-            return api.post('/login', credenciales)
-        }catch(error){
-            console.log(error)
-        }
+        return api.post('/login', credenciales)
+            .then(response => response)
+            .catch(error => {
+                if (error.response) {
+                    return error.response;
+                }
+                return error
+            })
+
     },
     getUsuarioInfo(){
         try{
