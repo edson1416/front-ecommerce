@@ -9,6 +9,7 @@ import Productos from "../components/productos/Productos.vue";
 import {userAuthStore} from "../stores/auth-store.js";
 import {storeToRefs} from "pinia";
 import NoAutorizado from "../components/NoAutorizado.vue";
+import VistaNotificaciones from "../components/notificaciones/VistaNotificaciones.vue";
 
 
 const routes = [
@@ -18,7 +19,8 @@ const routes = [
     {path:'/login',name: 'Login',component: Login},
     {path:'/favoritos',name: 'Favoritos',component: Favoritos},
     {path:'/mi-carrito', name: 'MiCarrito',component: MiCarrito},
-    {path:'/mi-cuenta', name: 'MiCuenta',component: MiCuenta, meta: {title: 'Mi Cuenta', requiereAuth: true, rolPermitido: 'admin'}},
+    {path:'/mi-cuenta', name: 'MiCuenta',component: MiCuenta, meta: {title: 'Mi Cuenta', requiereAuth: true, rolPermitido: 'cliente'}},
+    {path:'/notificaciones', name: 'Notificaciones',component: VistaNotificaciones, meta: {title: 'Notificaciones', requiereAuth: true, rolPermitido: 'cliente'}},
     {path:'/productos', name: 'Productos',component: Productos},
 ]
 

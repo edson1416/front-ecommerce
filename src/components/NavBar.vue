@@ -6,10 +6,12 @@ import Popover from 'primevue/popover';
 import Avatar from "primevue/avatar";
 import {userAuthStore} from "../stores/auth-store.js";
 import {storeToRefs} from "pinia";
+import Badge from 'primevue/badge';
+import OverlayBadge from 'primevue/overlaybadge';
 
 const op = ref();
 const authStore = userAuthStore()
-const {token} = storeToRefs(authStore)
+const {token, usuario} = storeToRefs(authStore)
 
 const selectedMember = ref(null);
 const members = ref([
@@ -97,10 +99,16 @@ const items = ref([
           <router-link v-if="!token" to="/login">
             <Button  icon="pi pi-user" label="Iniciar sesión" severity="contrast" variant="text" raised/>
           </router-link>
-          <div v-else class="card flex justify-end cursor-pointer space-x-2 items-center">
-            <h1 class="font-semibold ">Edson sarmiento</h1>
-            <Avatar icon="pi pi-user" size="large" shape="circle" @click="toggle" />
-
+          <div v-else class="card flex justify-end cursor-pointer space-x-6 items-center">
+            <OverlayBadge value="0" size="small">
+              <router-link to="/notificaciones">
+                <i class="pi pi-bell" style="font-size: 1.5rem"  />
+              </router-link>
+            </OverlayBadge>
+            <div class="flex items-center gap-2">
+              <h1 class="font-semibold ">{{usuario?.name}}</h1>
+              <Avatar icon="pi pi-user" size="large" shape="circle" @click="toggle" />
+            </div>
             <Popover ref="op">
               <div class="flex flex-col gap-4">
                 <div>
